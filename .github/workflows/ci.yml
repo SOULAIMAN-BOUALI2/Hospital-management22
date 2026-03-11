@@ -25,12 +25,12 @@ jobs:
       run: mvn clean install
     
   semgrep:
-    runs-on: ubuntu-latest
+  runs-on: ubuntu-latest
 
-    steps:
+  steps:
     - uses: actions/checkout@v4
 
-    - name: Run Semgrep
+    - name: Run Semgrep SAST
       uses: returntocorp/semgrep-action@v1
       with:
-        config: "p/ci"
+        config: p/ci
