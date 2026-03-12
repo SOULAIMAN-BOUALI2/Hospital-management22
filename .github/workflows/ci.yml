@@ -53,21 +53,21 @@ jobs:
             -Ddependency-check.skipUpdates=true \
             -Ddependency-check.failOnError=false
   sonarcloud:
-      runs-on: ubuntu-latest
-      needs: build
+    runs-on: ubuntu-latest
+    needs: build
 
-      steps:
-        - uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4
 
-        - name: Set up Java
-          uses: actions/setup-java@v4
-          with:
-            distribution: 'temurin'
-            java-version: '17'
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
 
-        - name: SonarCloud Scan
-          run: mvn verify sonar:sonar \
-            -Dsonar.projectKey=soulaiman-bouali2 \
-            -Dsonar.organization=SOULAIMAN-BOUALI2 \
-            -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.login=${{ secrets.02e0d2d6ecc5c386f71465809f96c24be95b6341 }}
+      - name: SonarCloud Scan
+        run: mvn verify sonar:sonar \
+          -Dsonar.projectKey=soulaiman-bouali2 \
+          -Dsonar.organization=SOULAIMAN-BOUALI2 \
+          -Dsonar.host.url=https://sonarcloud.io \
+          -Dsonar.login=${{ secrets.02e0d2d6ecc5c386f71465809f96c24be95b6341 }}
