@@ -52,7 +52,7 @@ jobs:
           mvn org.owasp:dependency-check-maven:check \
             -Ddependency-check.skipUpdates=true \
             -Ddependency-check.failOnError=false
-    sonarcloud:
+  sonarcloud:
       runs-on: ubuntu-latest
       needs: build
 
