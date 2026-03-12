@@ -70,4 +70,4 @@ jobs:
           -Dsonar.projectKey=soulaiman-bouali2 \
           -Dsonar.organization=SOULAIMAN-BOUALI2 \
           -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.login=${{ secrets.02e0d2d6ecc5c386f71465809f96c24be95b6341 }}
+          -Dsonar.login=${{ secrets.Hospital-management22 }}
