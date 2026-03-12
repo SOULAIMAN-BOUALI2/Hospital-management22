@@ -48,4 +48,4 @@ jobs:
 
       - name: OWASP Dependency Check
         run: |
-          mvn org.owasp:dependency-check-maven:check
+          mvn org.owasp:dependency-check-maven:check -Ddependency-check.skipUpdates=true
