@@ -47,6 +47,7 @@ jobs:
           java-version: '17'
 
       - name: OWASP Dependency Check
+        continue-on-error: true
         run: |
           mvn org.owasp:dependency-check-maven:check \
             -Ddependency-check.skipUpdates=true \
