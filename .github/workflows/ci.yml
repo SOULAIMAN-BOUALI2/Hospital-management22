@@ -34,19 +34,18 @@ jobs:
         uses: returntocorp/semgrep-action@v1
         with:
           config: p/ci
-          
-    dependency-check:
-      runs-on: ubuntu-latest
+  dependency-check:
+    runs-on: ubuntu-latest
 
-      steps:
-        - uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4
 
-        - name: Set up Java
-          uses: actions/setup-java@v4
-          with:
-            distribution: 'temurin'
-            java-version: '17'
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
 
-        - name: OWASP Dependency Check
-          run: |
-            mvn org.owasp:dependency-check-maven:check
+      - name: OWASP Dependency Check
+        run: |
+          mvn org.owasp:dependency-check-maven:check
