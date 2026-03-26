@@ -66,10 +66,11 @@ jobs:
           java-version: '17'
 
       - name: SonarCloud Scan
-        run: mvn verify sonar:sonar \
-          -Dsonar.projectKey=SOULAIMAN-BOUALI2_Hospital-management22 \
-          -Dsonar.organization=soulaiman-bouali2 \
-          -Dsonar.host.url=https://sonarcloud.io \
+        run: |
+          mvn verify sonar:sonar 
+          -Dsonar.projectKey=SOULAIMAN-BOUALI2_Hospital-management22 
+          -Dsonar.organization=soulaiman-bouali2 
+          -Dsonar.host.url=https://sonarcloud.io 
           -Dsonar.login=${{ secrets.SONAR_TOKEN_HOSPITAL_MANG }}
   trivy:
     runs-on: ubuntu-latest
